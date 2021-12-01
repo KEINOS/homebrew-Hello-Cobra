@@ -5,11 +5,11 @@
 class HelloCobra < Formula
   desc "Hello, world! sample of Cobra in Golang."
   homepage "https://github.com/KEINOS/Hello-Cobra/"
-  version "1.3.2"
+  version "1.3.3"
 
   on_macos do
-    url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.2/Hello-Cobra_1.3.2_macOS_all.zip", :using => CurlDownloadStrategy
-    sha256 "b694bb289b4b3f1c74015efa3bdb99d5ccdbac98d91b18f2037d73a9ff273b7e"
+    url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.3/Hello-Cobra_1.3.3_macOS_all.zip", :using => CurlDownloadStrategy
+    sha256 "c9a97f6b5c597e2c94d30e1c7c6cd73ce62377198664d4df331451fc69649cdc"
 
     def install
       bin.install "hello-cobra"
@@ -17,25 +17,25 @@ class HelloCobra < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.3/Hello-Cobra_1.3.3_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "1cfd7f64dc8201d90868b726b6d8453cc71a3403b8bf8ae1033f2f60e0d86a5a"
+
+      def install
+        bin.install "hello-cobra"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.2/Hello-Cobra_1.3.2_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "3b652481eba9f886c850cb8d0e1b7f54899d46db599f936d0935362d419eb13c"
+      url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.3/Hello-Cobra_1.3.3_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "2c7c08ea6f9b6b7160efbb672ff4abc8217a2034d05476f93d9f6b4311260189"
 
       def install
         bin.install "hello-cobra"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.2/Hello-Cobra_1.3.2_Linux_armv6.tar.gz", :using => CurlDownloadStrategy
-      sha256 "249b980371b8a58a5be78dad302e97fb872a6a12a50a2c08b78d296d0ee60f40"
-
-      def install
-        bin.install "hello-cobra"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.2/Hello-Cobra_1.3.2_Linux_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "5ebe350da8064cc154f77db0c0947c98d82d08a219ba375cd19d235f0d63dcdc"
+      url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.3/Hello-Cobra_1.3.3_Linux_armv6.tar.gz", :using => CurlDownloadStrategy
+      sha256 "3fb6b37e29f2915e1c86129fd12db0e499307c0430ca3519d3c80d40df858690"
 
       def install
         bin.install "hello-cobra"
