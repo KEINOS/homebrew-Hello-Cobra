@@ -5,11 +5,11 @@
 class HelloCobra < Formula
   desc "Hello, world! sample of Cobra in Golang."
   homepage "https://github.com/KEINOS/Hello-Cobra/"
-  version "1.3.6"
+  version "1.3.7"
 
   on_macos do
-    url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.6/Hello-Cobra_1.3.6_macOS_all.zip", using: CurlDownloadStrategy
-    sha256 "1b48edd180fbba61a9805995aa8e1e659038fd2998faad78be9e31be9c007bc6"
+    url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.7/Hello-Cobra_1.3.7_macOS_all.zip", using: CurlDownloadStrategy
+    sha256 "e2e61814d19339781a96f171562757623bb87e7ab84774e65ba24c9775d7697d"
 
     def install
       bin.install "hello-cobra"
@@ -18,24 +18,24 @@ class HelloCobra < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.6/Hello-Cobra_1.3.6_Linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "1e5531dddcf45986caee8806f8877396a480c621c1e27347744fb3710aef5e1f"
+      url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.7/Hello-Cobra_1.3.7_Linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "91bbd1188aa746a7729d3d780c0f4dbc74c71d348fc530ebf1bd86822639dc92"
 
       def install
         bin.install "hello-cobra"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.6/Hello-Cobra_1.3.6_Linux_x86_64.tar.gz", using: CurlDownloadStrategy
-      sha256 "9f4979fbd7ba693f088e1fd2684543ed8564488422b48b30a7128c713d3608d8"
+      url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.7/Hello-Cobra_1.3.7_Linux_x86_64.tar.gz", using: CurlDownloadStrategy
+      sha256 "22f3e81bd72f4d4081718dac2cdd2c99036920202a9de2f0c18aa3304fd36561"
 
       def install
         bin.install "hello-cobra"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.6/Hello-Cobra_1.3.6_Linux_armv6.tar.gz", using: CurlDownloadStrategy
-      sha256 "53236cde08a605ab013b7b56923b8cedb35b325e5fd0125bba5c491791cb5920"
+      url "https://github.com/KEINOS/Hello-Cobra/releases/download/v1.3.7/Hello-Cobra_1.3.7_Linux_armv6.tar.gz", using: CurlDownloadStrategy
+      sha256 "48add4f991f51cb1a68f769b4a39b4fbc4d25182209802a850f10aacf209db64"
 
       def install
         bin.install "hello-cobra"
